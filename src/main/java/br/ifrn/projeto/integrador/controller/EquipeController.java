@@ -2,7 +2,10 @@ package br.ifrn.projeto.integrador.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import br.ifrn.projeto.integrador.model.Equipe;
 
 /*As classes Controller servem para manipular rotas, e usaremos annotation.
 Uma annotation serve para ensinar um framework a colocar uma ação diferente numa classe, num atributo ou método.
@@ -53,9 +56,6 @@ representar dados persistentes. Isso ajuda a abstrair detalhes específicos do b
 
 
 
-
-
-
 */ 
 
 @RestController /*trabalhar com API Rest */
@@ -72,4 +72,15 @@ public class EquipeController {
     public String cadastrarEquipe(){
         return "Cadastrando";
     };
+
+    /*Retornar dado do tipo equipe*/
+
+    /*
+    @PostMapping("/equipe") - essa é a anotation responsável pela rota, pq o GetMapping
+    não tem suporte para o RequestBody. 
+    public Equipe equipe(@RequestBody Equipe eq) {
+        return eq;
+    };*/
+
+
 }
