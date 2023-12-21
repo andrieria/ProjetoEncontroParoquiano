@@ -17,7 +17,6 @@ public class Cronograma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nomeAtividade;
     /*Também podemos usar nossos próprios padrões de conversão, fornecendo um parâmetro padrão na anotação @DateTimeFormat : 
     @PostMapping("/date")
     public void date(@RequestParam("date") 
@@ -25,7 +24,13 @@ public class Cronograma {
     // ...
 }
     */
+
     @DateTimeFormat(pattern="dd/MM/yyyy")
+    private DateTimeFormat data;
+    private String diaSemana;
+
+    /*Falta o da hora, falta not blank e not null */
+    private String nomeAtividade;
     
   
     
