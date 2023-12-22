@@ -26,7 +26,7 @@ public class Cronograma {
     */
 
     @DateTimeFormat(pattern="dd/MM/yyyy")
-    private DateTimeFormat data;
+    private DateTimeFormat data_encontro;
     private String diaSemana;
 
     /*Falta o da hora, falta not blank e not null */

@@ -1,11 +1,14 @@
 package br.ifrn.projeto.integrador.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.ifrn.projeto.integrador.model.Equipe;
+import br.ifrn.projeto.integrador.repository.EquipeRepository;
 
 /*As classes Controller servem para manipular rotas, e usaremos annotation.
 Uma annotation serve para ensinar um framework a colocar uma ação diferente numa classe, num atributo ou método.
@@ -59,9 +62,29 @@ representar dados persistentes. Isso ajuda a abstrair detalhes específicos do b
 */ 
 
 @RestController /*trabalhar com API Rest */
+@RequestMapping("/equipe")
+/*Toda vez que escrevermos no final da URL /equipe, iremos ter acesso as 
+ funcionalidades de EquipeController.
+ */
 public class EquipeController {
     
     /*Cada método vai ser uma rota  */
+
+    @Autowired
+    /*Ela serve como um atalho. O desenvolvedor não precisa mais instanciar objetos
+     para ter acesso a determinados métodos (injeção de dependência).
+
+     */
+
+     private EquipeRepository repositorio;
+     /*Porque criou-se um objeto do tipo repositório? O nosso repositório vai 
+     conter as ações do nosso banco de dados (cadastrar, alterar, listar e excluir), 
+     então o objeto (repositorio) do tipo EquipeRepository pode chamar esses métodos.
+     
+     A criação de objetos tipo new Objeto objeto, quem faz, é a anotation @Autowired,
+     quando a aplicação spring se iniciar. Resumindo, vou ter acesso a comandos CRUD do
+     banco de dados sem precisar instanciar o objeto. 
+      */
     
     @GetMapping("/listequipe")
     public String listarEquipe(){
@@ -84,3 +107,29 @@ public class EquipeController {
 
 
 }
+
+
+
+
+
+
+/*
+ Inversão de Controle (IoC):
+
+Normalmente, em um programa, você controla a execução das coisas. Com a IoC, 
+você deixa essa responsabilidade para um sistema maior, como um framework.
+Em vez de escrever código que cria e gerencia objetos, você delega essa tarefa a 
+um "chefão" (como o Spring) que gerencia tudo para você.
+A IoC inverte a maneira como você normalmente faria as coisas, passando o controle 
+para algo maior.
+
+Injeção de Dependências (DI):
+
+Normalmente, quando uma classe precisa de algo (uma dependência), ela mesma cria 
+esse algo. Com a DI, outra coisa (como o Spring) fornece essas dependências.
+É como se você estivesse dizendo: "Ei, classe, você precisa disso e daquilo?
+ Aqui está, alguém vai te dar essas coisas de que você precisa."
+Em vez de classes se preocuparem em criar suas próprias dependências,
+ elas recebem essas dependências de fora, tornando o código mais flexível e 
+ fácil de testar.
+ */

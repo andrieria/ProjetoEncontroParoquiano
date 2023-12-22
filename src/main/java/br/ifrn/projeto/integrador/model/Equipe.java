@@ -1,9 +1,13 @@
 package br.ifrn.projeto.integrador.model;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
@@ -28,7 +32,9 @@ public class Equipe {
 
     /*Quando trabalhamos com model é sempre bom deixar os atributos privados*/
     @Id
-    /*Essa anotação @Id é responsável pela criação da chave primária.
+    /*Essa anotação @Id é responsável pela criação da chave primária. Ou seja,
+    é essa anotation quem garante que nosso código seja interpretado/compreendido
+    como uma chave primário (um registro).
     Para a chave primária ser auto incremento, a gente adiciona a anotação
     @GeneratedValue. Ela gera valores de forma crescente começando pelo número 1.
     */
@@ -36,4 +42,10 @@ public class Equipe {
     private Long id;
     private boolean acessoTarefa;
     private String nome; 
+
+    @OneToMany
+    @JoinColumn(name="id_equipe")
+    /*O nome dessa coluna vai ser a que tá na outra tabela, a chave estrangeira */
+    private List<Tarefa> tarefas;
+    /*Essa característica diz que posso ter várias tarefas para uma só equipe */
 }
