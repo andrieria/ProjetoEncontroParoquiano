@@ -25,6 +25,7 @@ a dados para vários armazenamentos de persistência.
  
 */
 public interface EquipeRepository extends JpaRepository<Equipe, Long>{
+    /*O lado esquerdo, é o modelo que quero trabalhar, nesse caso Equipe. */
     /*O tipo de chave primária, no lado direito, tem que ser representado
      por uma classe... se a chave primária fosse um inteiro, seria <Equipe, Integer >
      */

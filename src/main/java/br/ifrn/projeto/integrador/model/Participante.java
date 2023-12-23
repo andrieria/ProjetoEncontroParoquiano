@@ -1,11 +1,15 @@
 package br.ifrn.projeto.integrador.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -29,5 +33,25 @@ public class Participante {
     private String nivelEscolaridade;
     /*falta o endereço  */
 
+
+    @ManyToMany(mappedBy = "participantes") 
+    /* O mappedBy, no ManyToMany, o Spring entende que encontros abaixo 
+    dessa linha (que é uma lista), não vai criar uma nova tabela porque já temos
+    uma tabela pré definida pra ser criada que está na classe/entidade Encontro.
+    */
+    private List<Encontro> encontros = new ArrayList<>();
+
+
+    /*
+     * Tipo da Associação	Opção
+        One-to-one	       Qualquer um dos lados pode ser o dono, mas apenas um deles
+                           deve realmente ser o dono. Se isso não for especificado 
+                           teremos uma dependência circular.
+
+        One-to-many	        O lado "many" da associação deve ser tornado como o dono 
+                            da associação.
+        Many-to-one	Este é como o de cima, porém visualizado sob uma perspectiva oposta, mas a mesma regra se aplica - o lado “many” é o dono da associação.
+        Many-to-many	Qualquer um dos lados pode ser o dono da associação.
+     */
 
 }

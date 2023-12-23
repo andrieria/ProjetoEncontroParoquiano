@@ -70,7 +70,7 @@ public class EquipeController {
     
     /*Cada método vai ser uma rota  */
 
-    @Autowired
+    @Autowired(required=true)
     /*Ela serve como um atalho. O desenvolvedor não precisa mais instanciar objetos
      para ter acesso a determinados métodos (injeção de dependência).
 

@@ -13,7 +13,7 @@ esquema do banco de dados. Em vez de depender apenas da criação automática da
 tabelas, você pode definir as alterações no esquema de forma programática, 
 tornando o processo mais organizado e rastreável.*/
 
-CREATE TABLE cronograma (
+/*CREATE TABLE cronograma (
     id INT AUTO_INCREMENT PRIMARY KEY,
     /*pode ser que seja necessário alterar o tipo do atributo da data porque
     na classe Cronograma tá o DateTimeFormat */
