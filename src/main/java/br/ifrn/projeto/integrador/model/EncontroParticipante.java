@@ -15,6 +15,8 @@ public class EncontroParticipante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    /*falta as chaves estrangeiras e os relacionamentos e o nível de acesso */
+    private Prioridade nivelAcesso;
+
+    /*falta as chaves estrangeiras e os relacionamentos  */
     
 }

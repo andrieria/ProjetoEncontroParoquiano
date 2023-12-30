@@ -2,7 +2,6 @@ package br.ifrn.projeto.integrador.model;
 
 import java.util.Date;
 
-import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -29,14 +28,18 @@ public class Cronograma {
 }
     */
      /*not null aqui */
+
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
-    private Date dataExibida;
+    private Date dataDiaEncontro;
 
     /*not blanmk aqui  */
     private String diaSemana;
-
-    /*Falta o da hora, falta not blank e not null */
     private String nomeAtividade;
+    private String hora;
+
+    private int encontro_id;
+    /*falta not blank e not null */
+   
     
   
     

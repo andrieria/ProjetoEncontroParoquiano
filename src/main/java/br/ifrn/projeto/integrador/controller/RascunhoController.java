@@ -66,7 +66,7 @@ representar dados persistentes. Isso ajuda a abstrair detalhes específicos do b
 /*Toda vez que escrevermos no final da URL /equipe, iremos ter acesso as 
  funcionalidades de EquipeController.
  */
-public class EquipeController {
+public class RascunhoController {
     
     /*Cada método vai ser uma rota  */
 

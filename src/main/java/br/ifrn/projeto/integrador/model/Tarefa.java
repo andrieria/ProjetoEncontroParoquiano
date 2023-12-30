@@ -14,7 +14,10 @@ public class Tarefa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    /*falta chaves estrangeiras e relacionamentos */
+    
     private String tituloTarefa;
     private String descricao; 
+
+    /*falta chaves estrangeiras e relacionamentos */
+    /*private int equipe_id;*/
 }
