@@ -3,7 +3,7 @@ package br.ifrn.projeto.integrador.model;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import jakarta.validation.constraints.Pattern;
+// import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,7 +16,7 @@ import lombok.Setter;
 @NoArgsConstructor*/
 public class Endereco {
 
-    @Pattern(regexp = "\\d{5}-\\d{3}")
+    // @Pattern(regexp = "\\d{5}-\\d{3}")
     private String cep;
     private String estado;
     private String cidade;

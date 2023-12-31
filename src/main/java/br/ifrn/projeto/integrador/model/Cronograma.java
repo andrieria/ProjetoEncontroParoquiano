@@ -1,22 +1,38 @@
 package br.ifrn.projeto.integrador.model;
 
+import java.time.LocalTime;
 import java.util.Date;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import br.ifrn.projeto.integrador.model.CronogramaDTO.DiaSemana;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-@Entity
+@Entity(name = "cronograma")
 @Table(name="cronograma")
-@Data
-@EqualsAndHashCode(of="id")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode(of = "id")
 
 public class Cronograma {
 
@@ -31,16 +47,26 @@ public class Cronograma {
 }
     */
      /*not null aqui */
-
+    
+    @Column(name = "nome_atividade")
+    private String nomeAtividade;
+    
+    @Enumerated(EnumType.STRING)
+    @Column(name = "dia_semana")
+    private DiaSemana diaSemana;
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
-    private Date dataDiaEncontro;
+    private Date data;
 
     /*not blanmk aqui  */
-    private String diaSemana;
-    private String nomeAtividade;
-    private String hora;
+    private LocalTime hora;
 
-    private int encontro_id;
+    @ManyToOne
+    @JoinColumn(name = "encontro_id", referencedColumnName = "id")
+    private Encontro encontro;
+    public enum DiaSemana {
+        SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO
+    }
+    // private int encontro_id;
     /*falta not blank e not null */
    
     

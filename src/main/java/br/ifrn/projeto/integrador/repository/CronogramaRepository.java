@@ -7,5 +7,5 @@ import br.ifrn.projeto.integrador.model.Cronograma;
 
 @Repository
 public interface CronogramaRepository extends JpaRepository<Cronograma, Long>{
-    
+    Cronograma findFirstByOrderByIdDesc();
 }

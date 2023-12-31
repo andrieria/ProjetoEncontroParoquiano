@@ -17,11 +17,9 @@ CREATE TABLE cronograma (
     id INT AUTO_INCREMENT PRIMARY KEY,
     /*pode ser que seja necessário alterar o tipo do atributo da data porque
     na classe Cronograma tá o JsonFormat Date */
-    dataDiaEncontro DATE,
-    diaSemana VARCHAR(100),
-    nomeAtividade VARCHAR(200),
-    hora VARCHAR(10),
+    data DATE,
+    dia_semana VARCHAR(100),
+    nome_atividade VARCHAR(200),
+    hora TIME,
     encontro_id INT
 );
-
-ALTER TABLE cronograma ADD CONSTRAINT fk_cronograma_encontro FOREIGN KEY (encontro_id) REFERENCES encontro(id);

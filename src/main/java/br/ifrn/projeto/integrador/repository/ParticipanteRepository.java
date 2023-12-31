@@ -7,5 +7,5 @@ import br.ifrn.projeto.integrador.model.Participante;
 
 @Repository
 public interface ParticipanteRepository extends JpaRepository<Participante, Long> {
-    
+    Participante findByLogin(String username);
 }

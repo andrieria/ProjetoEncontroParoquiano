@@ -2,6 +2,7 @@ package br.ifrn.projeto.integrador.model;
 
 import java.util.List;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,22 +15,32 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.AllArgsConstructor;
 
-@Entity
-@Table(name="encontro")
-@Data
-@EqualsAndHashCode(of="id")
+@Entity(name = "encontro")
+@Table(name = "encontro")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode(of = "id")
 
 public class Encontro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String tituloEncontro;
+    private String titulo;
     private int ano;
     /*falta endereço e as chaves estrangeiras com os relacionamentos */
     @Embedded
     private Endereco endereco;
+    @Column(name = "nome_local")
     private String nomeLocal;
     @ManyToMany
     @JoinTable(
