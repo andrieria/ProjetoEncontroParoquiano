@@ -16,11 +16,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+
 import javax.validation.constraints.Pattern;
 
 @Entity
 @Table(name="participante")
 @Data
+@EqualsAndHashCode(of="id")
 public class Participante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

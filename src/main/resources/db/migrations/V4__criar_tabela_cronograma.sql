@@ -23,3 +23,5 @@ CREATE TABLE cronograma (
     hora VARCHAR(10),
     encontro_id INT
 );
+
+ALTER TABLE cronograma ADD CONSTRAINT fk_cronograma_encontro FOREIGN KEY (encontro_id) REFERENCES encontro(id);

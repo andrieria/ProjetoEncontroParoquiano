@@ -1,1 +1,0 @@
-/*ALTER TABLE encontro ADD CONSTRAINT fk_encontro_2_participante FOREIGN KEY (encontro_participante_id) REFERENCES equipe(id);

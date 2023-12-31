@@ -2,16 +2,18 @@ package br.ifrn.projeto.integrador.model;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Embeddable
-@Getter
+@Data
+/*@Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
+@NoArgsConstructor*/
 public class Endereco {
 
     @Pattern(regexp = "\\d{5}-\\d{3}")

@@ -44,11 +44,15 @@ public class Equipe {
     private String nome; 
 
     @OneToMany
-    @JoinColumn(name="id_equipe")
+    @JoinColumn(name="equipe_id")
     /*O nome dessa coluna vai ser a que tá na outra tabela, a chave estrangeira */
     private List<Tarefa> tarefas;
     /*Essa característica diz que posso ter várias tarefas para uma só equipe.
      Ou seja, a gente criou a estrutura do relacionamento na entidade One (Equipe)
      no entanto, a coluna no banco de dados vai ser criada no lado Many(tarefas).
     */
+
+    @OneToMany
+    @JoinColumn(name="equipe_id")
+    private List<EncontroParticipante> grupos;
 }
