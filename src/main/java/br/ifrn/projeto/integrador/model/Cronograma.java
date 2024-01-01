@@ -5,8 +5,9 @@ import java.util.Date;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import br.ifrn.projeto.integrador.model.CronogramaDTO.DiaSemana;
+// import br.ifrn.projeto.integrador.model.CronogramaDTO.DiaSemana;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -54,7 +55,6 @@ public class Cronograma {
     @Enumerated(EnumType.STRING)
     @Column(name = "dia_semana")
     private DiaSemana diaSemana;
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd/MM/yyyy")
     private Date data;
 
     /*not blanmk aqui  */

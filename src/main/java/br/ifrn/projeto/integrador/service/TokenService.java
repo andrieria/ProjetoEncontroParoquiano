@@ -29,6 +29,7 @@ public class TokenService {
                     .withClaim("id", participante.getId())
                     .withExpiresAt(dataExpiracao())
                     .sign(algorithm);
+                    
         } catch (Exception exception) {
             throw new RuntimeException("Erro ao gerar o token", exception);
         }

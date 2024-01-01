@@ -1,9 +1,12 @@
 package br.ifrn.projeto.integrador.controller;
 
+import java.util.List;
+
 // import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +26,7 @@ import br.ifrn.projeto.integrador.service.EncontroService;
 
 @RestController
 @RequestMapping("encontro")
+@CrossOrigin(origins = "*")
 public class EncontroController {
 
     @Autowired
@@ -37,6 +41,12 @@ public class EncontroController {
         return ResponseEntity.ok(encontroCriado);
     }
 
+    @GetMapping
+    public ResponseEntity<List<Encontro>> listarEncontros() {
+        List<Encontro> encontros = encontroService.listarEncontros();
+        return ResponseEntity.ok(encontros);
+    }
+    
     @GetMapping("/{id}")
     public ResponseEntity<Encontro> obterEncontro(@PathVariable Long id) {
         Encontro encontro = encontroService.obterEncontroPorId(id);

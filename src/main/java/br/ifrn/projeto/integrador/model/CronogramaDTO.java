@@ -1,4 +1,4 @@
-package br.ifrn.projeto.integrador.model;
+/* package br.ifrn.projeto.integrador.model;
 
 import java.time.LocalTime;
 import java.util.Date;
@@ -24,3 +24,4 @@ public class CronogramaDTO {
         SEGUNDA, TERCA, QUARTA, QUINTA, SEXTA, SABADO, DOMINGO
     }
 }
+ */

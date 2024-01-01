@@ -1,5 +1,7 @@
 package br.ifrn.projeto.integrador.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +15,10 @@ public class EncontroService {
     @Autowired
     private EncontroRepository encontroRepository;
 
-
+    public List<Encontro> listarEncontros() {
+        return encontroRepository.findAll();
+    }
+    
     public Encontro criarEncontro(Encontro encontro) {
         return encontroRepository.save(encontro);
     }

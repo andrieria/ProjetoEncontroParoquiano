@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.ifrn.projeto.integrador.model.Cronograma;
-import br.ifrn.projeto.integrador.model.CronogramaDTO;
+// import br.ifrn.projeto.integrador.model.CronogramaDTO;
 import br.ifrn.projeto.integrador.model.Encontro;
 import br.ifrn.projeto.integrador.model.EncontroParticipante;
 import br.ifrn.projeto.integrador.repository.CronogramaRepository;

@@ -37,9 +37,9 @@ public class SecurityConfigurations  {
         return http.csrf().disable()
               .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
               .and().authorizeHttpRequests()
-              .requestMatchers(HttpMethod.POST, "/login", "/tarefa/**","/participante/**", "/equipe/**", "/encontro/**", "/cronograma/**","/encontroparticipante/**").permitAll()
-              .requestMatchers(HttpMethod.GET, "/tarefa/**","/participante/**", "/equipe/**", "/encontro/**", "/cronograma/**","/encontroparticipante/**").permitAll()
-              .requestMatchers(HttpMethod.PUT, "/login","/tarefa/**","/participante/**", "/equipe/**", "/encontro/**", "/cronograma/**","/encontroparticipante/**").permitAll()
+              .requestMatchers(HttpMethod.POST, "/login", "/tarefa/**","/participante/**", "/equipe/**", "/encontro/**", "/cronograma","/encontroparticipante/**").permitAll()
+              .requestMatchers(HttpMethod.GET, "/tarefa/**","/participante/**", "/equipe/**", "/encontro/**", "/cronograma","/encontroparticipante/**").permitAll()
+              .requestMatchers(HttpMethod.PUT, "/login","/tarefa/**","/participante/**", "/equipe/**", "/encontro/**", "/cronograma","/encontro_participante/**").permitAll()
               .anyRequest().authenticated()
               .and().addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
               .build();

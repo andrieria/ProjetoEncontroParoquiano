@@ -62,10 +62,10 @@ public class Encontro {
     private List<Participante> participantes;
 
 
-    @OneToMany
+/*     @OneToMany
     @JoinColumn(name="encontro_id")
-    /*O nome dessa coluna vai ser a que tá na outra tabela, a chave estrangeira */
+    O nome dessa coluna vai ser a que tá na outra tabela, a chave estrangeira 
     private List<Cronograma> cronograma;
-
+ */
 
 }
