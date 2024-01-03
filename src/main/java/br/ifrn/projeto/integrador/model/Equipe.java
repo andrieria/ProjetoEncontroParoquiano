@@ -48,9 +48,9 @@ public class Equipe {
     @Column(name = "acesso_tarefa")
     private String acessoTarefa;
     private String nome; 
-
+/* 
     @OneToMany(mappedBy = "equipe")
-    private Set<Tarefa> tarefas;
+    private Set<Tarefa> tarefas; */
     /*O nome dessa coluna vai ser a que tá na outra tabela, a chave estrangeira */
 
     /*Essa característica diz que posso ter várias tarefas para uma só equipe.

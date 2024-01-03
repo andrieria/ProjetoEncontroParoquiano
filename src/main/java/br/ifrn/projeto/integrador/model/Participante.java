@@ -13,6 +13,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -65,13 +66,13 @@ public class Participante implements UserDetails{
     /*falta o endereço  */
     @Embedded
     private Endereco endereco;
-
+    @JsonIgnore
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "usuario_permissao", 
         joinColumns = @JoinColumn(name = "participante_id"), 
         inverseJoinColumns = @JoinColumn(name = "permissao_id"))
     private Set<Permissao> permissoes = new HashSet<>();
-    
+    @JsonIgnore
     @ManyToMany(mappedBy = "participantes")
     /*o nome "participantes" é o mesmo que está na lista na Entidade Encontro */ 
     /* O mappedBy, no ManyToMany, o Spring entende que encontros abaixo 
